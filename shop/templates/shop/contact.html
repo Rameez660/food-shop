@@ -1,0 +1,43 @@
+{% extends 'basic.html' %}
+
+{% block title %}Give Your Thoughts To Cramm Food{% endblock %}
+{% block body %}
+{% load static %}
+
+
+					<div class="leave-comment">
+						<h5 style="text-align:center">LEAVE A COMMENT</h5>
+						<form class="form-horizontal" action="{% url 'contact' %}" method="post">
+						{% csrf_token %}
+							<div class="form-group">
+						    	<label for="name" class="col-sm-2 control-label">Name</label>
+							    <div class="col-sm-10">
+							      	<input type="text" name="name" id="name" class="form-control" placeholder="Name" required>
+							    </div>
+						  	</div>	<!-- End of /.form-group -->
+						  	<div class="form-group">
+						    	<label for="email" class="col-sm-2 control-label">Email</label>
+							    <div class="col-sm-10">
+							      	<input type="email" class="form-control" name='email' id="email" placeholder="Your Email" required>
+							    </div>
+						  	</div>		<!-- End of /.form-group -->
+
+						  	<div class="form-group">
+						    	<label for="desc" class="col-sm-2 control-label">Message</label>
+							    <div class="col-sm-10">
+							      	<textarea name="desc" id="desc" class="form-control"   rows="3" required></textarea>
+							    </div>
+						  	</div>	<!-- End of /.form-group -->
+						  		
+							<div class="form-group">
+						    	<div class="col-sm-offset-2 col-sm-10">
+						      		<button type="submit" class="btn btn-primary">Send</button>
+						    	</div>
+						  	</div>	<!-- End of /.form-group -->
+						</form>	<!-- End of /.form-horizontal -->
+					</div>	<!-- End of /.leave comments -->
+				</div>	<!-- End of /.col-md-9 -->
+
+		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14472.377136111169!2d67.03359164999999!3d24.9288578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1587209788878!5m2!1sen!2s" class="col-sm-12" width="50%" height="450px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+{% endblock %}

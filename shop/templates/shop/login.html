@@ -1,0 +1,76 @@
+{% extends 'basic.html' %} {% block title %} Login {% endblock %}
+{% block body %}
+  {% if messages %}
+    {% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+  <strong>Message : </strong> {{message}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+  {% endfor %}
+{% endif %}
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+
+
+
+ 
+   <div class="">
+
+    <form class="well form-horizontal" action="{% url 'login' %}" method="post"  id="contact_form">
+    {% csrf_token %}
+<fieldset>
+
+<!-- Form Name -->
+<legend style="text-align:center">Login into your account <br> If you didn't create an account then register yourself</legend>
+
+<!-- Text input-->
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="email" id="email" placeholder="Enter Your E-Mail Address" class="form-control"  type="email" required>
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+       
+<div class="form-group">
+  <label class="col-md-4 control-label">Password</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="password" id="password" placeholder="Enter Your Password" class="form-control" type="Password" required>
+    </div>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-warning" >Login</button>
+  </div>      
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+         <button type="submit" class="btn btn-warning" ><a class="" style="color:white" href="{% url 'signup' %}">Register</a>  </button>    
+</div></div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+         <a class="" style="" href="{% url 'signup' %}">forgot password</a>
+</div></div>
+</fieldset>
+</form>
+</div>
+    </div>
+   {% endblock %}

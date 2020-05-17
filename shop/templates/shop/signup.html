@@ -1,0 +1,95 @@
+  {% extends 'basic.html' %} {% block title %} Registeration Form {% endblock %}
+  {% block style %} 
+  {% endblock %}
+{% block body %}
+  
+   <div class="">
+
+    <form class="well form-horizontal" action="{% url 'register_user' %}" method="post"  id="contact_form">
+    {% csrf_token %}
+<fieldset>
+
+<!-- Form Name -->
+<legend style="text-align:center">Create a user account</legend>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">First Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="firstname" id="firstname" placeholder="Enter Your First Name" class="form-control"  type="text" required>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Last Name</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="lastname" id="lastname" placeholder="Enter Your Last Name" class="form-control"  type="text" required>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="email" id="email" placeholder="Enter Your E-Mail Address" class="form-control"  type="email" required>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label">User Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="username" id="username" placeholder="Enter Your User Name" class="form-control"  type="text" required>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+       
+<div class="form-group">
+  <label class="col-md-4 control-label">Password</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="password" id="password" placeholder="Password must contain atleast 8 characters" class="form-control" type="password" required>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Enter Password Again</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="passwordd" id="passwordd" placeholder="Enter password again" class="form-control" type="password" required>
+    </div>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-warning" >Register</button>
+  </div>
+                  
+</div>
+              
+</fieldset>
+</form>
+</div>
+    </div>
+    
+    {% endblock %}

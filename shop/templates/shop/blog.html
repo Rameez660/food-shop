@@ -1,0 +1,179 @@
+{% extends 'basic.html' %}
+
+{% block title %}Blog Of Cramm Food{% endblock %}
+{% block body %}
+{% load static %}
+
+
+
+	<!-- Breadcrumbs Start
+    ================================================== -->
+
+	<section id="topic-header">
+		<div class="container">
+			<div class="row">
+				<div style="text-align:center" class="col-md-10">
+					<h1>BLOG</h1>
+					<p>Latest News</p>
+				</div>	<!-- End of /.col-md-4 -->	
+				<div class="col-md-2 hidden-xs">
+					<ol class="breadcrumb pull-right">
+					  	<li><a href="{% url 'home' %}">Home</a></li>
+					  	<li><a href="{% url 'blog' %}">Blog</a></li>
+					</ol>
+				</div>	<!-- End of /.col-md-8 -->
+			</div>	<!-- End of /.row -->
+		</div>	<!-- End of /.container -->
+	</section>	<!-- End of /#Topic-header -->
+
+
+	<section id="blog">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9 clearfix">
+					<ul class="blog-zone">
+					    <li>
+					        <div class="blog-icon">
+					        	<i class="fa  fa-pencil"></i>
+					        </div>
+					        <div class="blog-box">
+					        	<img src="{%static 'images/blog-1.jpg'%}" alt="">
+					            
+					            <div class="blog-post-body clearfix">
+						            <a href="#.">
+					            		<h2>Ricebean black-eyed pea</h2>
+						            </a>
+					            	<div class="blog-post-tag">
+						            
+						            </div>
+						            <p>The black-eyed pea, black-eyed bean, or goat pea, a legume, is a subspecies of the cowpea, grown around the world for its medium-sized, edible bean.
+
+The common commercial variety is called the California Blackeye; it is pale-colored with a prominent black spot. The American South has countless varieties, many of them heirloom, that vary in size from the small lady peas to very large ones. The color of the eye may be black, brown, red, pink, or green. All the peas are green when freshly shelled and brown or buff when dried. A popular variation of the black-eyed pea is the purple hull pea; it is usually green with a prominent purple or pink spot. The currently accepted botanical name for the black-eyed pea is Vigna unguiculata subsp. unguiculata, although previously it was classified in the genus Phaseolus. Vigna unguiculata subsp. dekindtiana is the wild relative and Vigna unguiculata subsp. sesquipedalis is the related asparagus bean. Other beans of somewhat similar appearance, such as the frijol ojo de cabra (goat's-eye bean) of northern Mexico, are sometimes incorrectly called black-eyed peas, and vice versa.</p>
+						            <a href="#." class="btn btn-default btn-transparent pull-right" role="button">
+								        <span>Read More</span>
+								    </a>
+					            </div>
+					        </div>	<!-- End of /.blog-box -->
+					    </li>
+					
+					  </ul>	<!-- End of /.blog-zone -->
+
+					<!-- Pagination -->
+				<!--	 <ul class="pagination pull-right">
+					  	<li class="disabled"><a href="#">&laquo;</a></li>
+					  	<li><a href="#.">1 <span class="sr-only"></span></a></li>
+					  	<li><a href="#.">2</a></li>
+					  	<li><a href="#.">3</a></li>
+					  	<li><a href="#.">4</a></li>
+					  	<li><a href="#.">»</a></li>
+					</ul>-->
+				</div>	<!-- End of /.col-md-9 -->
+
+				<div class="col-md-3">
+					<div class="blog-sidebar">
+						<div class="block">
+							<h4>Catagories</h4>
+							<div class="list-group">
+								<a href="#." class="list-group-item">
+									Italian Foods
+								</a>
+								<a href="#." class="list-group-item">
+									Traditional Food
+								</a>
+								<a href="#." class="list-group-item">
+									Indian Food
+								</a>
+								<a href="#." class="list-group-item">
+									Spanish Food
+								</a>
+								<a href="#." class="list-group-item">
+									Thai FoodN
+								</a>
+							</div>
+						</div>	<!-- End of /.block -->
+						<div class="block">
+							<h4>Popular Posts</h4>
+							<ul class="media-list">
+							 	<li class="media">
+							    	<a class="pull-left" href="#">
+							      		<img class="media-object" src="{%static 'images/post-img.png'%}" alt="...">
+							    	</a>
+							    	<div class="media-body">
+							      		<a href="" class="media-heading">
+							      			Burger</a>
+							    	</div>
+							  	</li>	<!-- End of /.media -->
+							  	<li class="media">
+							    	<a class="pull-left" href="#">
+							      		<img class="media-object" src="{%static 'images/post-img-2.png'%}" alt="...">
+							    	</a>
+							    	<div class="media-body">
+							      		<a href="" class="media-heading">
+							      			Paratha</a>
+							    	</div>
+							  	</li>	<!-- End of /.media -->
+							  	<li class="media">
+							    	<a class="pull-left" href="#">
+							      		<img class="media-object" src="{%static 'images/post-img-3.png'%}" alt="...">
+							    	</a>
+							    	<div class="media-body">
+							      		<a href="" class="media-heading">
+							      		Sticks</a>
+							    	</div>
+							  	</li>	<!-- End of /.media -->
+							</ul>	<!-- End of /.media-list -->
+						</div>	<!-- End of /.block -->
+
+						<div class="block">
+							<h4>Tag Cloud</h4>
+							<div class="tag-link">
+								<a href="">BALLET</a>
+								<a href="">BLOG</a>
+								<a href="">CHRISTMAS</a>
+								<a href="">ELEGANCE</a>
+								<a href="">ELEGANT</a>
+								<a href="">SHOPPING</a>
+								<a href="">SHOP</a>
+								<a href="">PHOTOGRAPHY</a>
+							</div>	
+						</div>	<!-- End of /.block -->
+						
+					</div>	<!-- End of /.blog-sidebar -->
+				</div>	<!-- End of /.col-md-3 -->
+			</div>	<!-- End of /.row -->
+		</div>	<!-- End of /.container -->
+	</section>	<!-- End of /#Blog -->
+
+
+
+
+
+<div class="container">
+						<h1 style="text-align:center">ABOUT US</h1>
+          <div class="">
+            <h2 class="featurette-heading">About Cramm...<span class="text-muted">&nbsp;&nbsp;&nbsp; It'll blow your mind.</span></h2>
+            <p class="lead">Muhammad Rameez is an Pakistani technologist and Student, software developer, investor, and researcher. ... Rameez led the company as chairman and CEO until stepping down as CEO in January 2020, but he remained chairman and became chief software architect.</p>
+          </div>
+
+        </div>
+
+
+
+
+        </div>
+
+
+        <div class="container">
+          <div class="">
+            <h2 class="featurette-heading">Philosophy, Life  <span class="text-muted">Myself.</span></h2>
+            <p class="lead">Do Not Let your Struggles Overcome you Struggles have always been looked at as a negative thing, and are usually associated with being weak However, many people tend to forget that this is a natural part of life, which helps us grow as individuals. People need to remember that our past is what makes us who we are, but is not what defines us. Many of us stay in the past but never remember that there is a whole future to look forward to.
+<br>
+The lessons learned from both Color Purple and Unless are very similar. The first one is People can find out their true capabilities by pursuing through their struggles. Second never give up. By giving up you aren’t able to find out your true pentational. Finally Both men and women are capable of doing the same thing. Through examining Rita in Unless and Sylvia in The Colour Purple it is evident that one who is able to embrace the struggles that they face will be better able to overcome them. To begin, through an individual’s struggles it allows them to find their true selves.
+<br>
+In the first part of the book Unless by Carol Shields, Reta Winters has her whole life figured out and plans to pursue her desire to become a writer. However, the people around her discourage reta making her let go of her dreams. Later on in the book Reta struggles teach her that she is a fighter and that she can fight for beliefs. “Why do you want to become a writer? You already have everything want” (Unless Carol Shield). Many people believe once you hit a current age you have learned everything that is needed to know in order to survive life but that is not true. Reta was able to find her true self this allowed her to become a strong bright woman and reminds her to fight for what she believes in.</p>
+          </div>
+
+        </div>
+
+
+{% endblock %}

@@ -1,0 +1,153 @@
+{% extends 'basic.html' %}
+{% block title %}Quick Order with Quick Delivery{% endblock %}
+
+{% block body %}
+
+							<div style="float:right" >
+						    <button class="btn btn-success"><a  style="color:white" href="{% url 'handlelogout' %}"> Logout</a></button>
+						    </div>
+
+
+
+{% load static %}
+						    
+
+ 					<div class="leave-comment">
+						<h1 class="col-sm-12" style="text-align:center">Order Now</h1>
+						<form class="form-horizontal" action="{% url 'ordernow' %}" method="post" role="form">
+						{% csrf_token %}
+							<div class="form-group">
+						    	<label for="name" class="col-sm-2 control-label">Full Name</label>
+							    <div class="col-sm-10">
+							      	<input type="text" class="form-control" name="name" id="name" placeholder="Your Full Name" required>
+							    </div>
+						  	</div>	<!-- End of /.form-group -->
+						  	<div class="form-group">
+						    	<label for="email" class="col-sm-2 control-label">Email Address</label>
+							    <div class="col-sm-10">
+							      	<input type="email" class="form-control" name='email' id="email" placeholder="Your Email" required>
+							    </div>
+						  	</div>	<!-- End of /.form-group -->
+                              						  	<div class="form-group">
+						    	<label for="cnic" class="col-sm-2 control-label">Cnic Number</label>
+							    <div class="col-sm-10">
+							      	<input type="number" class="form-control" onKeyPress="if(this.value.length==13) return false;" min="13" name="cnic" id="cnic" required placeholder="Enter your 13 digits without dash CNIC number 0000000000000">
+							    </div>
+						  	</div>
+					  	<div class="form-group">
+						    	<label for="number" class="col-sm-2 control-label">Mobile Number</label>
+							    <div class="col-sm-10">
+							      	<input type="number" class="form-control" name="number" onKeyPress="if(this.value.length==11) return false;" min="11" id="number" required placeholder="Enter your mobile number 03**-*******">
+							    </div>
+						  	</div>
+
+                              						  	<div class="form-group">
+						    	<label for="address" class="col-sm-2 control-label">Permanent Address</label>
+							    <div class="col-sm-10">
+							      	<input type="text" class="form-control" required name="address" id="address" placeholder="Your Permanent Address">
+							    </div>
+						  	</div>
+                              						  	<div class="form-group">
+						    	<label for="addresss" class="col-sm-2 control-label">Confirm Address</label>
+							    <div class="col-sm-10">
+							      	<input type="text" class="form-control" name="addresss" id="addresss" required placeholder="Enter Address Again">
+							    </div>
+						  	</div>
+
+								<div class="form-group">
+   								<label for="country"  class="col-sm-2 control-label">Country</label>
+	 							<div class="col-sm-4">
+							    <div class="form-check">
+    							<select  name="country" id="country" class="form-control">
+						        <option>Pakistan</option>
+						      	</select>
+
+   								</div>
+							    </div>
+
+							   								<label for="city"  class="col-sm-2 control-label">City</label>
+	 							<div class="col-sm-4">
+							    <div class="form-check">
+    							<select  name="city" id="city" class="form-control">
+						        <option>Karachi</option>
+						      	</select>
+
+   								</div>
+							    </div>
+
+							  	</div>
+
+					<!--			<div class="form-group">
+   								<label for="city"  class="col-sm-2 control-label">City</label>
+	 							<div class="col-sm-10">
+							    <div class="form-check">
+    							<select class="form-control">
+						        <option>Karachi</option>
+						      	</select>
+
+   								</div>
+							    </div>
+							  	</div>-->
+
+							  <div class="form-group">
+						    	<label for="items" class="col-sm-2 control-label">Select Items</label>
+							    <div class="col-sm-10">
+							    <div class="form-check">
+										Salad  <input name="item1" id="item1" class="form-check-input position-static" type="checkbox" id="items" value="option1" aria-label="...">
+  								<br>	Ketchup  <input name="item2" id="item2" class="form-check-input position-static" type="checkbox" id="items" value="option1" aria-label="...">
+  								<br>	Burger & Fries  <input name="item3" id="item3" class="form-check-input position-static" type="checkbox" id="items" value="option1" aria-label="...">
+  								<br>	Salad Refreshment  <input name="item4" id="item4" class="form-check-input position-static" type="checkbox" id="items" value="option1" aria-label="...">
+								<br>	Ketchup  <input name="item5" id="item5" class="form-check-input position-static" type="checkbox" id="items" value="option1" aria-label="...">
+  								<br>	Burger & Fries  <input name="item6" id="item6" class="form-check-input position-static" type="checkbox" id="items" value="option1" aria-label="...">
+  								<br>	Salad Refreshment  <input name="item7" id="item7" class="form-check-input position-static" type="checkbox" id="items" value="option1" aria-label="...">
+  								<br>	Burger & Fries  <input name="item8" id="item8" class="form-check-input position-static" type="checkbox" id="items" value="option1" aria-label="...">
+								
+								</div>
+							    </div>
+							  	</div>
+							  	<div class="form-group">
+						    	<label for="quantity" class="col-sm-2 control-label">Quantity</label>
+							    <div class="col-sm-1">
+							      quantity of Salad	<input name="quantity1" required id="quantity1" type="number" value="0" class="form-control"  placeholder="0">
+							    </div>
+															    <div class="col-sm-1">
+							      quantity of Ketchup	<input required name="quantity2" id="quantity2"  type="number"  value="0" class="form-control" placeholder="0">
+							    </div>
+															    <div class="col-sm-1">
+							      quantity of Burger & Fries	<input type="number" required name="quantity3" id="quantity3" value="0" class="form-control" placeholder="0">
+							    </div>
+															    <div class="col-sm-1">
+							      quantity of Salad Refreshment	<input type="number" required  name="quantity4" id="quantity4" value="0" class="form-control"  placeholder="0">
+							    </div>
+															    <div class="col-sm-1">
+							      quantity of Ketchup	<input type="number"  required name="quantity5" id="quantity5" class="form-control" value="0" placeholder="0">
+							    </div>
+								<div class="col-sm-1">
+							      quantity of Burger & Fries	<input type="number" required name="quantity6" id="quantity6"  class="form-control"  value="0" placeholder="0">
+							    </div>
+								<div class="col-sm-1">
+							      quantity of Salad Refreshment	<input type="number"  required name="quantity7" id="quantity7" class="form-control"  value="0" placeholder="0">
+							    </div>
+								<div class="col-sm-1">
+							      quantity of Burger & Fries	<input type="number"  required name="quantity8" id="quantity8" class="form-control"  value="0" placeholder="0">
+							    </div>
+						  	</div>
+							  <div class="form-group">
+							  <label for="quantity" class="col-sm-2 control-label"></label>
+							    <div class="col-sm-10">
+							      	  <label><input type="checkbox" value="" required>Before submitting make sure you are enter valid credentials otherwise you will not get the order</label>
+							    </div>
+						  	</div>
+
+
+							<div class="form-group">
+						    	<div class="col-sm-offset-2 col-sm-10">
+						      		<button type="submit" class="btn btn-primary">Place Order</button>
+						    	</div>
+						  	</div>	<!-- End of /.form-group -->
+						</form>	<!-- End of /.form-horizontal -->
+					</div>	<!-- End of /.leave comments -->
+				</div>	<!-- End of /.col-md-9 -->
+
+
+{% endblock %}

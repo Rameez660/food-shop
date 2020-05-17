@@ -1,0 +1,12 @@
+{% extends 'basic.html' %} {% block title %} search {% endblock %}
+   {% block body %}
+   <h1>Search Results : </h1>
+   <p>No search results found</p>
+   Your search - <b>{{query}}</b> - didnot match any document suggestion. <br>
+   <ul>
+   <li>Make sure all word are spelled correctly</li>
+   <li>try more general keywords</li>
+   <li>try fewer keywords</li>
+   <li>Try different keywords</li>  
+   </ul>
+   {% endblock %}
